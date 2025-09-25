@@ -3,7 +3,7 @@ import img from "../assets/vector1.png";
 
 const Hirro = () => {
   return (
-    <div className="w-[1200px] mx-auto flex gap-6 mt-10">
+    <div className="w-[1200px] mx-auto md:flex grid gap-6 mt-10">
       <div className="w-[708px] h-[250px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2]  items-center text-center flex flex-col justify-center rounded-2xl text-2xl text-white  relative ">
         <img className=" absolute left-0 " src={img} alt="" />
         <img className="absolute  scale-x-[-1] right-0  " src={img} alt="" />

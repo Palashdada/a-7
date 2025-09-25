@@ -3,13 +3,13 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className=" shadow ">
-      <div className="flex justify-between w-[1200px] mx-auto">
+      <div className="md:flex justify-between w-[1200px] mx-auto">
         <div className="  items-center bg-[#FFFFFF]">
           <h1 className=" font-bold text-2xl text-[#130B2D] ">
             CS- Ticket System
           </h1>
         </div>
-        <div className=" flex items-center ">
+        <div className=" md:flex items-center ">
           <div>
             <a className=" mr-4 " href="">
               Home
