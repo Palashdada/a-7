@@ -1,0 +1,24 @@
+import React from "react";
+import img from "../assets/vector1.png";
+
+const Hirro = () => {
+  return (
+    <div className="w-[1200px] mx-auto flex gap-6 mt-10">
+      <div className="w-[708px] h-[250px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2]  items-center text-center flex flex-col justify-center rounded-2xl text-2xl text-white  relative ">
+        <img className=" absolute left-0 " src={img} alt="" />
+        <img className="absolute  scale-x-[-1] right-0  " src={img} alt="" />
+
+        <h1 className="text-2xl">In-Progress</h1>
+        <p className=" text-6xl ">0</p>
+      </div>
+      <div className="w-[708px] h-[250px] bg-gradient-to-r from-[#54CF68] to-[#00827A]  items-center text-center flex flex-col justify-center rounded-2xl text-2xl text-white relative ">
+        <img className=" absolute left-0 " src={img} alt="" />
+        <img className="absolute  scale-x-[-1] right-0  " src={img} alt="" />
+        <h1 className="text-2xl">Resolved</h1>
+        <p className=" text-6xl ">0</p>
+      </div>
+    </div>
+  );
+};
+
+export default Hirro;
