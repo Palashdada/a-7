@@ -1,9 +1,17 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const TicketsCards = ({ data }) => {
-  console.log(data);
+const TicketsCards = ({ data, inProgress, setInProgress }) => {
+  let clickHandel = (card) => {
+    if (!inProgress.find((c) => c.id === card.id))
+      setInProgress([...inProgress, card]);
+    toast("added to In-Progress");
+  };
   return (
-    <div>
+    <div
+      onClick={() => clickHandel(data)}
+      className=" hover:scale-110 transform transition duration-300 "
+    >
       <div className="bg-white rounded-2xl shadow p-2 ">
         <div className="flex justify-between">
           <h1 className="text-[#001931]"> {data.title} </h1>

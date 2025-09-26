@@ -1,18 +1,30 @@
 import React, { use } from "react";
 import TicketsCards from "./TicketsCards";
+import TaskStatus from "./TaskStatus";
 
-const CoustommerTickets = ({ ticketPromis }) => {
+const CoustommerTickets = ({ ticketPromis, setInProgress, inProgress }) => {
   const ticketDatas = use(ticketPromis);
 
   return (
-    <div className="w-[1200px] mx-auto ">
-      <h1 className=" text-[#34485A] text-2xl font-semibold ">
-        Customer Tickets
-      </h1>
-      <div className=" grid grid-cols-2 w-9/12 gap-4 mt-5">
-        {ticketDatas.map((data) => {
-          return <TicketsCards data={data}></TicketsCards>;
-        })}
+    <div className="w-[1200px] mx-auto md:flex justify-center ">
+      <div>
+        <h1 className=" text-[#34485A] text-2xl font-semibold ">
+          Customer Tickets
+        </h1>
+        <div className=" grid md:grid-cols-2 w-11/12 gap-4 mt-5 max-w-fit">
+          {ticketDatas.map((data) => (
+            <TicketsCards
+              key={data.id}
+              data={data}
+              setInProgress={setInProgress}
+              inProgress={inProgress}
+            ></TicketsCards>
+          ))}
+        </div>
+      </div>
+      <div className="">
+        <h1 className="text-[#34485A] text-2xl font-semibold">Task Status</h1>
+        <TaskStatus inProgress={inProgress}></TaskStatus>
       </div>
     </div>
   );

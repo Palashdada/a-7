@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className=" shadow ">
-      <div className="md:flex justify-between w-[1200px] mx-auto">
+      <div className="md:flex justify-between max-w-[1200px] mx-auto">
         <div className="  items-center bg-[#FFFFFF]">
           <h1 className=" font-bold text-2xl text-[#130B2D] ">
             CS- Ticket System
