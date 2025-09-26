@@ -9,6 +9,7 @@ const CoustommerTickets = ({
   setResolved,
   resolved,
   ticket,
+  setTicket,
 }) => {
   // const ticketDatas = use(ticketPromis);
 
@@ -25,6 +26,7 @@ const CoustommerTickets = ({
               data={data}
               setInProgress={setInProgress}
               inProgress={inProgress}
+              setTicket={setTicket}
             ></TicketsCards>
           ))}
         </div>
@@ -35,6 +37,7 @@ const CoustommerTickets = ({
           inProgress={inProgress}
           setInProgress={setInProgress}
           resolved={resolved}
+          setTicket={setTicket}
         ></TaskStatus>
       </div>
     </div>

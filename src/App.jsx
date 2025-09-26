@@ -17,7 +17,7 @@ function App() {
       .then((data) => {
         setTicket(data);
       });
-  });
+  }, []);
 
   return (
     <>
@@ -33,6 +33,7 @@ function App() {
           setResolved={setResolved}
           resolved={resolved}
           ticket={ticket}
+          setTicket={setTicket}
         ></CoustommerTickets>
       </Suspense>
       <Footer></Footer>

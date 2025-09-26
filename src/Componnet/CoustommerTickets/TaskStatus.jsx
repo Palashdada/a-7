@@ -1,13 +1,19 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const TaskStatus = ({ inProgress, setResolved, setInProgress, resolved }) => {
+const TaskStatus = ({
+  inProgress,
+  setResolved,
+  setInProgress,
+  resolved,
+  setTicket,
+}) => {
   let resolvedHandel = (task) => {
+    setInProgress((prev) => prev.filter((t) => t.id !== task.id));
+    setTicket((prev) => prev.filter((t) => t.id !== task.id));
     if (!resolved.find((t) => t.id === task.id)) {
       setResolved((prev) => [...prev, task]);
     }
-
-    setInProgress((prev) => prev.filter((t) => t.id !== task.id));
     toast("Resolved Done");
   };
   return (
