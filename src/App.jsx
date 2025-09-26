@@ -8,16 +8,21 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   let [inProgress, setInProgress] = useState([]);
+  let [resolved, setResolved] = useState([]);
   const ticketPromis = fetch("/ticket.json").then((res) => res.json());
   return (
     <>
       <Navbar></Navbar>
-      <Hirro inProgress={inProgress}></Hirro>
-      <Suspense>
+      <Hirro inProgress={inProgress} resolved={resolved}></Hirro>
+      <Suspense
+        fallback={<span className="loading loading-spinner loading-xl"></span>}
+      >
         <CoustommerTickets
           ticketPromis={ticketPromis}
           inProgress={inProgress}
           setInProgress={setInProgress}
+          setResolved={setResolved}
+          resolved={resolved}
         ></CoustommerTickets>
       </Suspense>
       <Footer></Footer>

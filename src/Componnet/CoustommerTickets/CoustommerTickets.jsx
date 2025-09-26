@@ -2,7 +2,13 @@ import React, { use } from "react";
 import TicketsCards from "./TicketsCards";
 import TaskStatus from "./TaskStatus";
 
-const CoustommerTickets = ({ ticketPromis, setInProgress, inProgress }) => {
+const CoustommerTickets = ({
+  ticketPromis,
+  setInProgress,
+  inProgress,
+  setResolved,
+  resolved,
+}) => {
   const ticketDatas = use(ticketPromis);
 
   return (
@@ -23,8 +29,12 @@ const CoustommerTickets = ({ ticketPromis, setInProgress, inProgress }) => {
         </div>
       </div>
       <div className="">
-        <h1 className="text-[#34485A] text-2xl font-semibold">Task Status</h1>
-        <TaskStatus inProgress={inProgress}></TaskStatus>
+        <TaskStatus
+          setResolved={setResolved}
+          inProgress={inProgress}
+          setInProgress={setInProgress}
+          resolved={resolved}
+        ></TaskStatus>
       </div>
     </div>
   );

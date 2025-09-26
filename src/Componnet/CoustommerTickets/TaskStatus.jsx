@@ -1,19 +1,43 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const TaskStatus = ({ inProgress }) => {
+const TaskStatus = ({ inProgress, setResolved, setInProgress, resolved }) => {
+  let resolvedHandel = (task) => {
+    if (!resolved.find((t) => t.id === task.id)) {
+      setResolved((prev) => [...prev, task]);
+    }
+
+    setInProgress((prev) => prev.filter((t) => t.id !== task.id));
+    toast("Resolved Done");
+  };
   return (
-    <div>
+    <div className="w-[400px]">
       <div>
+        <h1 className="text-[#34485A] text-2xl font-semibold">Task Status</h1>
+        {inProgress.length === 0 && <p className="text-gray-500">No Data</p>}
         {inProgress.map((task) => (
-          <div className="flex">
+          <div className="bg-white rounded-2xl shadow w-[300px]">
             <h1>{task.title}</h1>
+            <button
+              onClick={() => resolvedHandel(task)}
+              className="items-center text-center md:w-full w-auto bg-[#02A53B] text-[#FFFFFF] ma"
+            >
+              Complete
+            </button>
           </div>
         ))}
-        <button className="items-center text-center max-w-full bg-[#02A53B] text-[#FFFFFF] ma">
-          Complete
-        </button>
       </div>
-      <div></div>
+      <div>
+        <h1 className="text-[#34485A] text-2xl font-semibold">Resolved Task</h1>
+        {resolved.length === 0 && <p className="text-gray-500">No Data</p>}
+        <div className="bg-[#E0E7FF] rounded-2xl shadow w-[300px] text-center">
+          {resolved.map((task) => (
+            <div className="">
+              <h1>{task.title}</h1>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
