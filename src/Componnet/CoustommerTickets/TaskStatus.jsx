@@ -38,7 +38,7 @@ const TaskStatus = ({
         {resolved.length === 0 && <p className="text-gray-500">No Data</p>}
         <div className="bg-[#E0E7FF] rounded-2xl shadow w-[300px] text-center">
           {resolved.map((task) => (
-            <div className="">
+            <div className="p-5">
               <h1>{task.title}</h1>
             </div>
           ))}
